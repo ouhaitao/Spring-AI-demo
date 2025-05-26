@@ -19,8 +19,8 @@ public class MCPController {
     private ChatClient chatClient;
     
     @GetMapping(value = "/getWeather", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<String> getWeather(String prompt) {
-        System.out.println("getWeather prompt:" + prompt);
-        return chatClient.prompt(prompt).stream().content();
+    public Flux<String> getWeather(String city) {
+        System.out.println("getWeather city:" + city);
+        return chatClient.prompt().user(city).stream().content();
     }
 }
