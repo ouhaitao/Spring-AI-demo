@@ -14,8 +14,8 @@ public class McpClientDemoApplication {
     }
     
     @Bean
-    public ChatClient chatClient(ChatClient.Builder chartClientBuilder, ToolCallbackProvider toolCallbackProvider) {
-        return chartClientBuilder
+    public ChatClient chatClient(ChatClient.Builder chatClientBuilder, ToolCallbackProvider toolCallbackProvider) {
+        return chatClientBuilder
             .defaultTools(toolCallbackProvider)
             .build();
     }
